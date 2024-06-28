@@ -1,0 +1,125 @@
+.ancestorContainer {
+    display: flex;
+    background-color: whitesmoke;
+    padding: 8px;
+    border-radius: 8px;
+    height: 80vh;
+    margin: 6px;
+    flex-direction: column;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 4px;
+}
+
+.addButton {
+    height: fit-content;
+    width: fit-content;
+    padding: 12px 8px;
+    background-color: floralwhite;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: large;
+    font-weight: 700;
+    transition: all 0.3s linear;
+    box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.1);
+
+    &:hover {
+        box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.4);
+    }
+}
+
+.todoContainer {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    background-color: rgb(0, 0, 0);
+    margin: 4px;
+    border-radius: 8px;
+    padding: 8px;
+    gap: 12px;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+
+.todo {
+    background-color: white;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 4px 2px rgb(0, 0, 0, 0.1);
+    justify-content: space-between;
+    max-height: fit-content;
+
+    input {
+        margin-right: 8px;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.infoContainer {
+    width: 90%;
+    font-size: x-large;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.todoInput,
+.descriptionInput { width: 200px; /* Set an appropriate width */
+padding: 10px; /* Add padding for spacing around the text */
+border: 1px solid #ccc; /* Add a border for visual separation */
+margin: 10px; /* Add margin to space out the boxes */
+background-color: #f9f9f9; /* Set a background color */
+font-size: 14px; /* Adjust font size as needed */
+line-height: 1.5; /* Set line height for readability */
+}
+
+
+
+
+
+
+/* TODO.module.css */
+
+.saveButton,
+.editButton,
+.deleteButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 8px 16px; /* Padding around the text */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Display as inline block */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Cursor pointer on hover */
+    margin-right: 10px; /* Margin right for spacing */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.saveButton:hover,
+.editButton:hover,
+.deleteButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+.noTodoMessage {
+    color: white;
+    align-self: center;
+    justify-self: center;
+    font-size: large;
+}
+
+
+
