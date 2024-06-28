@@ -19,6 +19,8 @@ export function TODO() {
         fetchTodo();
     }, []);
 
+
+
     const getTodo = async () => {
         const options = {
             method: "GET",
@@ -124,7 +126,7 @@ export function TODO() {
         <div className={Styles.ancestorContainer}>
             <div className={Styles.headerContainer}>
                 <h1>Tasks</h1>
-                <span>
+                
                     <input
                         className={Styles.todoInput}
                         type='text'
@@ -134,15 +136,17 @@ export function TODO() {
                         onChange={(event) => {
                             setNewTodo(event.target.value);
                         }}
+                        
                     />
                     <input
-                        className={Styles.descriptionInput}
+                        className={Styles.todoInput}
                         type='text'
                         placeholder='Enter the description for the task'
                         value={taskDescription}
                         onChange={(event) => {
                             setTaskDescription(event.target.value);
                         }}
+                        
                     />
                     <button
                         id='addButton'
@@ -155,7 +159,7 @@ export function TODO() {
                         + New Todo
                     </button>
                     
-                </span>
+                
             </div>
             <div id='todoContainer' className={Styles.todoContainer}>
                 {loading ? (
@@ -167,17 +171,25 @@ export function TODO() {
                                 <input
                                     type='checkbox'
                                     checked={entry.done}
-                                    onChange={() => updateTodo(entry._id)}
+                                    
                                 />
                                 {editingTodoId === entry._id ? (
                                     // Display edit inputs
                                     <>
                                         <input
-                                            className={Styles.taskEditInput}
+                                            
                                             type='text'
                                             placeholder='Edit Task Title'
                                             value={newTodo}
                                             onChange={(event) => setNewTodo(event.target.value)}
+                                            style={{
+                                                width: '100%',
+                                                margin: '10px 0',
+                                                height: '40px',
+                                                fontSize: '16px',
+                                                padding: '10px',
+                                                boxSizing: 'border-box'
+                                            }}
                                         />
                                         <input
                                             className={Styles.taskEditInput}
@@ -185,6 +197,14 @@ export function TODO() {
                                             placeholder='Edit Task Description'
                                             value={newDescription}
                                             onChange={(event) => setNewDescription(event.target.value)}
+                                            style={{
+                                                width: '100%',
+                                                margin: '10px 0',
+                                                height: '40px',
+                                                fontSize: '16px',
+                                                padding: '10px',
+                                                boxSizing: 'border-box'
+                                            }}
                                         />
                                         <button
                                             className={Styles.saveButton}
@@ -197,8 +217,8 @@ export function TODO() {
                                     // Display todo title and description
                                     <>
                                         <span><b>Task:</b>  {entry.title}</span>
-                                        <br></br>
-                                        <span><b>Description:</b> ({entry.description})</span>
+                                       
+                                        <span><b>Description:</b>{entry.description}</span>
                                         <button
                                             className={Styles.editButton}
                                             onClick={() => handleEdit(entry._id, entry.title, entry.description)}
